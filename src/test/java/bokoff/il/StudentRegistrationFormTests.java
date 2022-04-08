@@ -28,9 +28,9 @@ public class StudentRegistrationFormTests {
     String mobilePhone = "1111111111";
     String subjects="English";
     String gender="Male";
-    String filePath="test.jpg";
+    String filePath= "img/test.jpg";
     String currentAddress="1st Street";
-    String dateOfBirth="15 August,2000";
+    String dateOfBirth="30 August,2000";
     String hobby="Sports";
     String state="NCR";
     String city="Delhi";
@@ -47,7 +47,7 @@ public class StudentRegistrationFormTests {
     $("#dateOfBirthInput").click();
     $(".react-datepicker__month-select").selectOption("August");
     $(".react-datepicker__year-select").selectOption("2000");
-    $("[aria-label$='August 15th, 2000']").click();
+    $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month").click();
     $("#subjectsInput").setValue(subjects).pressEnter();
     $(byText(hobby)).click();
     $("#uploadPicture").uploadFromClasspath(filePath);
@@ -68,7 +68,7 @@ public class StudentRegistrationFormTests {
         text(dateOfBirth),
         text(subjects),
         text(hobby),
-        text(filePath),
+        text("test.jpg"),
         text(currentAddress),
         text(state+" " +city)
                                      );
